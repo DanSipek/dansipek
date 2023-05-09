@@ -77,19 +77,14 @@
 
 		<section class="Kontakt" id="kontakt">
 			<h2>Kontaktuj nás</h2>
-			<form action="" method="post" onsubmit="return false;">
-				<label for="name">Jmeno:</label>
-				<input type="text" id="name" name="name" required>
-
-				<label for="email">Predmet:</label>
-				<input type="text" id="predmet" name="predmet" required>
-				
-
-				<label for="message">Zpáva:</label>
-				<textarea id="message" name="message" required></textarea>
-
-				<input type="submit" value="Poslat zprávu" class="btn btn-primary" onclick="openGmail()">
-			</form>
+			<form action="https://formsubmit.co/dan.official035@gmail.com" method="POST">
+           <input type="text" name="name" required placeholder="Name">
+           <input type="hidden" name="_next" value="https://hydrazeus.neocities.org/main">
+           <input type="hidden" name="_captcha" value="false">
+           <input type="email" name="email" required placeholder="Email">
+           <input type="text" name="message" required placeholder="Text">
+           <button type="submit">Send</button>
+      </form>
 		</section>
 	</main>
 
