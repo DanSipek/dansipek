@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The web site of hydrazeus</title>
+     <script>
+      if (sessionStorage.getItem("loggedIn") !== "true") {
+          // Pokud je uživatel přihlášen, umožní mu přístup na stránku main.html
+          window.location.href = "login_index.html";
+      }
+    </script>
+    <style>
+      section {
+        margin-top: 60px;
+      }
+      header {
+           font-size: 30px;
+           display: flex;
+           position: fixed;
+           align-items: center;
+           background-color: #333;
+           height: 60px;
+           top: 0;
+           left: 0;
+           right: 0;
+           z-index: 999;
+      }
+       nav ul {
+           display: flex;
+           list-style: none;
+           margin: 0;
+           padding: 0;
+      }
+       nav li {
+           margin: 0 10px;
+           transition: all 0.3s ease-in-out;
+      }
+       nav li a {
+           text-decoration: none;
+           font-weight: bold;
+           font-size: 18px;
+           color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+      	<header>
+    		<nav>
+    			<ul>
+    				<li><a href="https://hydrazeus.neocities.org/main">Home</a></li>
+    				<li><a href="https://hydrazeus.neocities.org/kontakt">Kontakt</a></li>
+    				<li><a href="https://sima47.neocities.org/" target="_blank">Stránka (Šimon)</a></li>
+    				<li><a href="https://houskovci.neocities.org/" target="_blank">Stránka (Jakub)</a></li>
+    			</ul>
+    		</nav>
+	</header>
+	<section>
+    <h1>5, 11, 12</h1>
+      <img src="mapa.png" usemap="#ctverecky">
+      <map name="ctverecky">
+        <area href="prvni.html" target="_blank" shape="circle" coords="241, 228, 10">
+        <area href="druha.html" target="_blank" shape="circle" coords="230, 277, 10">
+        <area href="treti.html" target="_blank" shape="circle" coords="172, 295, 10">
+      </map>
+    </section>
+  </body>
+</html>

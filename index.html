@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://smtpjs.com/v3/smtp.js"></script> <!-- Include smtp.js library -->
+  <link rel="stylesheet" type="text/css" href="https://hydrazeus.neocities.org/styles/style.css">
+  <title>HydraZeus | Login</title>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="">Home</a></li>
+        <li><a href="#kontakt">Kontakt</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="login-form">
+      <h2>Přihlášení</h2>
+      <form id="login-form" method="post">
+        <label for="username">Jméno:</label>
+        <input type="text" id="username" name="username" required>
+        <label for="password">Heslo:</label>
+        <input type="password_type" id="password" name="password" required>
+        <p id="error-message" style="display: none; color: red; text-align: center;">Nespravné jméno nebo heslo</p>
+        <button type="submit" class="btn btn-primary">Login</button>
+      </form>
+    </section>
+    <section class="Kontakt" id="kontakt">
+			<h2>Pokud nejste přihlášen pošlete žádost:</h2>
+			<form action="" method="post" onsubmit="return false;">
+				<label for="name">Jméno:</label>
+				<input type="text" id="name" name="name" required>
+
+				<label for="email">Předmět:</label>
+				<input type="text" id="predmet" name="predmet" required>
+				
+
+				<label for="message">Zpráva:</label>
+				<textarea id="message" name="message" required></textarea>
+
+				<input type="submit" value="Poslat zprávu" class="btn btn-primary" onclick="openGmail()">
+			</form>
+		</section>
+  </main>
+
+  <script>
+  
+    const validUsernames = ["sipek.daniel", "slavik.simon", "nemec.jakub", "karel.myska"];
+    const validPasswords = ["\x6e\x76\x7c\x62\x75\x7d\x72\x70\x72\x7d","\x5f\x72\x64\x7b\x78\x7d\x72\x7f\x72\x64\x7b\x78","\x76\x73\x7a\x7e\x79\x24\x22","\x62\x74\x7e\x63\x72\x7b"]; // encrypted passwords
+    
+    function encryptPassword(password) {
+      const key = 23; // encryption key
+      let encrypted = "";
+    
+      for (let i = 0; i < password.length; i++) {
+        const charCode = password.charCodeAt(i);
+        encrypted += String.fromCharCode(charCode ^ key);
+      }
+    
+      return encrypted;
+    }
+    console.log(convertToHex('ucitel'));
+    
+    console.log(encryptPassword("\x62\x74\x7e\x63\x72\x7b"));
+    console.log(encryptPassword("\x5f\x72\x64\x7b\x7d\x72\x7f\x72\x64\x7b\x78"));
+    console.log(encryptPassword("\x76\x73\x7a\x7e\x79\x24\x22"));
+    console.log(encryptPassword("\x62\x74\x7e\x63\x72\x7b"));
+    
+    
+    function convertToHex(str) {
+      let hex = "";
+      for (let i = 0; i < str.length; i++) {
+        let charCode = (str.charCodeAt(i) ^ 23).toString(16);
+        if (charCode.length < 2) {
+          charCode = "0" + charCode;
+        }
+        hex += "\\x" + charCode;
+      }
+      return hex;
+    }
+    //console.log(encryptPassword("\x6e\x76\x7c\x62\x75\x7d\x72\x70\x72\x7d"));
+    
+    const decryptedPasswords = validPasswords.map(encryptPassword);
+    
+    const form = document.getElementById("login-form");
+    
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+    
+      const username = e.target.username.value;
+      const password = encryptPassword(e.target.password.value);
+      
+      if (validUsernames.includes(username) && validPasswords.includes(password)) {
+        document.cookie = "loggedIn=true";
+        sessionStorage.setItem("loggedIn", "true");
+        window.location.href = "main.html";
+      } else {
+        document.getElementById("error-message").style.display = "block";
+      }
+    });
+    
+    function openGmail() {    
+      const name = document.getElementById('name').value;
+      const subject = document.getElementById('predmet').value;
+      const message = document.getElementById('message').value;
+      const to = 'daniel.sipek@zspolabiny1.cz';
+    
+      const body = `${name},%0D%0A${message}`;
+      const gmailUrl = `https://mail.google.com/mail/?view=cm&to=${to}&su=${subject}&body=${body}`;
+    
+      window.open(gmailUrl, '_blank');
+      emailCounter++;
+    }
+    
+    window.addEventListener('scroll', function() {
+      var body = document.getElementsByTagName('body')[0];
+      if (window.scrollY > 0) {
+        body.style.marginTop = '60px';
+      } else {
+        body.style.marginTop = '0';
+      }
+    });
+
+
+  </script>
+</body>
+</html>

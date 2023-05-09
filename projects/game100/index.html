@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+ 
+<head>
+    <title>Hra o 100$</title>
+    <style>
+      button {
+        position: absolute;
+      }
+    </style>
+     
+    <script>
+      if (sessionStorage.getItem("loggedIn") !== "true") {
+          // Pokud je uživatel přihlášen, umožní mu přístup na stránku main.html
+          window.location.href = "login_index.html";
+      }
+      window.addEventListener('mousemove', function(event) {
+        var x = event.clientX;
+        var y = event.clientY;
+        var button = document.querySelector('button');
+        button.style.left = x + 1 + 'px';
+        button.style.top = y + 1 + 'px';
+      });
+      
+      function sayWin() {
+        alert("You win 100$. HOW?"); 
+      }
+          <script>
+    	  // Zkontroluje, zda je uživatel přihlášen a má oprávnění pro přístup na stránku main.html
+      
+    </script>
+</head>
+ 
+<body>
+    <center>
+      <h1>Game try to click on the button!</h1>
+    </center>
+    <button onclick="sayWin()" type="but2">Click for 100$ dollars</button>
+ 
+</body>
+ 
+</html>

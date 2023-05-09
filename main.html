@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="https://hydrazeus.neocities.org/styles/style.css">
+
+	<title>HydraZeus | Home</title>
+	<script>
+	  // Zkontroluje, zda je uživatel přihlášen a má oprávnění pro přístup na stránku main.html
+    if (sessionStorage.getItem("loggedIn") !== "true") {
+      // Pokud je uživatel přihlášen, umožní mu přístup na stránku main.html
+      window.location.href = "index.html";
+    } 
+    
+    function openGmail() {    
+      const name = document.getElementById('name').value;
+      const subject = document.getElementById('predmet').value;
+      const message = document.getElementById('message').value;
+      const to = 'daniel.sipek@zspolabiny1.cz, jakub.nemec@zspolabiny1.cz, simon.slavik@zspolabiny1.cz';
+    
+      const body = `${name},%0D%0A${message}`;
+      const gmailUrl = `https://mail.google.com/mail/?view=cm&to=${to}&su=${subject}&body=${body}`;
+    
+      window.open(gmailUrl, '_blank');
+      emailCounter++;
+    }
+    
+    window.addEventListener('scroll', function() {
+      var body = document.getElementsByTagName('body')[0];
+      if (window.scrollY > 0) {
+        body.style.marginTop = '60px';
+      } else {
+        body.style.marginTop = '0';
+      }
+    });
+
+	</script>
+</head>
+<body>
+	<header>
+		<nav>
+			<ul>
+				<li><a href="#home">Home</a></li>
+				<li><a href="#projects">Projekty</a></li>
+				<li><a href="#kontakt">Kontakt</a></li>
+				<li><a href="https://sima47.neocities.org/" target="_blank">Stránka (Šimon)</a></li>
+				<li><a href="https://houskovci.neocities.org/" target="_blank">Stránka (Jakub)</a></li>
+			</ul>
+		</nav>
+	</header>
+	
+	
+
+	<main>
+		<section class="hero" id="home">
+			<h1 align="center">Welcome to HydraZeus</h1>
+		</section>
+		
+		<section>
+		  <h2>O nás</h2>
+		  <h3>HydraZeus je stránka na školské projekty. Pracujeme pod školou <a href="https://www.zspolabiny1.cz/" target="_blank">ZŠ Polabiny 1</a>. Hlavní developer je Daniel Šípek. Pomocní developeři jsou Jakub Němec a Šimon Slavík. <a href="pdf's/pravidla.pdf" download>Pravidla firmy &copy; HydraZeus</a>.</h3> 
+		  <h3>Pokud se chcete připoji do vytvaření projektů <a href="#kontakt">kontaktujte nás</a> a napište na jakém projeku se chcete zúčastnit.</h3>
+		</section>
+		
+
+		<section class="projects" id="projects">
+			<h2>Projekty</h2>
+  			<ul>
+  				<li><a href="https://hydrazeus.neocities.org/projects/mapa/"><div align="center">Mapa</div></a></li>
+          <li><a href="https://hydrazeus.neocities.org/projects/hokej/"><div align="center">Hokej</div></a></li>
+          <li><a href="https://hydrazeus.neocities.org/projects/obr/"><div align="center">Zvířata</div></a></li>
+          <li><a href="https://hydrazeus.neocities.org/projects/prez/"><div align="center">Prezident</div></a></li>
+          <li><a href="projects/blank/index.html"><div align="center">Zatím Nic</div></a></li>
+  			</ul>
+		</section>
+
+		<section class="Kontakt" id="kontakt">
+			<h2>Kontaktuj nás</h2>
+			<form action="" method="post" onsubmit="return false;">
+				<label for="name">Jmeno:</label>
+				<input type="text" id="name" name="name" required>
+
+				<label for="email">Predmet:</label>
+				<input type="text" id="predmet" name="predmet" required>
+				
+
+				<label for="message">Zpáva:</label>
+				<textarea id="message" name="message" required></textarea>
+
+				<input type="submit" value="Poslat zprávu" class="btn btn-primary" onclick="openGmail()">
+			</form>
+		</section>
+	</main>
+
+  	<footer>
+  		<p style="font-size: 30px;">&copy; 2008 HydraZeus.</p>
+  	</footer>
+</body>
+</html>

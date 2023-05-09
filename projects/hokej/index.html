@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The web site of hydrazeus</title>
+    <script>
+      if (sessionStorage.getItem("loggedIn") !== "true") {
+        // Pokud je uživatel přihlášen, umožní mu přístup na stránku main.html
+        window.location.href = "login_index.html";
+      }
+    </script>
+    <style>
+     header {
+           font-size: 30px;
+           display: flex;
+           position: fixed;
+           align-items: center;
+           background-color: #333;
+           height: 60px;
+           top: 0;
+           left: 0;
+           right: 0;
+           z-index: 999;
+      }
+       nav ul {
+           display: flex;
+           list-style: none;
+           margin: 0;
+           padding: 0;
+      }
+       nav li {
+           margin: 0 10px;
+           transition: all 0.3s ease-in-out;
+      }
+       nav li a {
+           text-decoration: none;
+           font-weight: bold;
+           font-size: 18px;
+           color: #fff;
+      }
+     body {
+        xbackground-size: cover;
+      }
+      table {
+        margin-top: 60px;
+        border: 5px solid grey;
+        padding: 5px;
+        text-align: center;
+        background-image: url('obr.png');
+        width: 500px;
+        xbackground-color: rgba(0, 0, 0, 0.7); /* Change the alpha value to adjust the opacity */
+      }
+      td {
+        padding: 10px;
+      }
+      tr {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    	<header>
+    		<nav>
+    			<ul>
+    				<li><a href="https://hydrazeus.neocities.org/main">Home</a></li>
+    				<li><a href="https://hydrazeus.neocities.org/kontakt">Kontakt</a></li>
+    				<li><a href="https://sima47.neocities.org/" target="_blank">Stránka (Šimon)</a></li>
+    				<li><a href="https://houskovci.neocities.org/" target="_blank">Stránka (Jakub)</a></li>
+    			</ul>
+    		</nav>
+	</header>
+    <table border="5" cellpadding="5" align="center" bgcolor="grey" style="style= text-align: center;" id="home">
+      <tbody>
+        <tr>
+          <td align="center">2023</td>
+          <td>CZE</td>
+          <td>CAN</td>
+          <td>SVK</td>
+          <td>SUI</td>
+          <td>LAT</td>
+          <td>NOR</td>
+          <td>KAZ</td>
+          <td>SLO</td>
+          <td>body</td>
+          <td>pořadí</td>
+        </tr>
+        <tr>
+          <td>
+           <a href="david.html" target="_blank"><img src="cesko.png" height="40"></a>
+          </td>
+          <td>x</td>
+          <td>:</td>
+          <td>:</td>
+          <td>:</td>
+          <td>:</td>
+          <td>:</td>
+          <td>:</td>
+          <td>:</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>
+            <a href="shane.html" target="_blank"><img src="canada.png" height="40"></a>
+          </td>
+          <td>:</td>
+          <td>x</td>
+          <td>:</td>
+          <td>:</td>
+          <td>:</td>
+          <td>:</td>
+          <td>:</td>
+          <td>:</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>
+            <a href="juraj.html" target="_blank"><img src="slovensko.png" height="40"></a>
+          </td>
+          <td>:</td>
+          <td>:</td>
+          <td>x</td>
+          <td>:</td>
+          <td>:</td>
+          <td>:</td>
+          <td>:</td>
+          <td>:</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>
+            <img src="svycarsko.png" height="40">
+          </td>
+          <td>:</td>
+          <td>:</td>
+          <td>:</td>
+          <td>x</td>
+          <td>:</td>
+          <td>:</td>
+          <td>:</td>
+          <td>:</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>
+            <img src="lotysko.png" height="40">
+          </td>
+          <td>:</td>
+          <td>:</td>
+          <td>:</td>
+          <td>:</td>
+          <td>x</td>
+          <td>:</td>
+          <td>:</td>
+          <td>:</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>
+            <img src="norsko.png" height="40">
+          </td>
+          <td>:</td>
+          <td>:</td>
+          <td>:</td>
+          <td>:</td>
+          <td>:</td>
+          <td>x</td>
+          <td>:</td>
+          <td>:</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>
+            <img src="kazachstan.png" height="40">
+          </td>
+          <td>:</td>
+          <td>:</td>
+          <td>:</td>
+          <td>:</td>
+          <td>:</td>
+          <td>:</td>
+          <td>x</td>
+          <td>:</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>
+            <img src="slovinsko.png" height="40">
+          </td>
+          <td>:</td>
+          <td>:</td>
+          <td>:</td>
+          <td>:</td>
+          <td>:</td>
+          <td>:</td>
+          <td>:</td>
+          <td>x</td>
+          <td></td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <script>
+      if (sessionStorage.getItem("loggedIn") !== "true") {
+          // Pokud je uživatel přihlášen, umožní mu přístup na stránku main.html
+          window.location.href = "login_index.html";
+      }
+    </script>
+    <title>Zviratas</title>
+      <style>
+      header {
+           font-size: 30px;
+           display: flex;
+           position: fixed;
+           align-items: center;
+           background-color: #333;
+           height: 60px;
+           top: 0;
+           left: 0;
+           right: 0;
+           z-index: 999;
+      }
+       nav ul {
+           display: flex;
+           list-style: none;
+           margin: 0;
+           padding: 0;
+      }
+       nav li {
+           margin: 0 10px;
+           transition: all 0.3s ease-in-out;
+      }
+       nav li a {
+           text-decoration: none;
+           font-weight: bold;
+           font-size: 18px;
+           color: #fff;
+      }
+        table, th, td {
+          margin-top: 60px;
+          border: 1px solid;
+          font-size: 10px;
+        }
+      </style>
+    
+  </head>
+
+  
+  <body>
+  <header>
+    		<nav>
+    			<ul>
+    				<li><a href="https://hydrazeus.neocities.org/main">Home</a></li>
+    				<li><a href="https://hydrazeus.neocities.org/kontakt">Kontakt</a></li>
+    				<li><a href="https://sima47.neocities.org/" target="_blank">Stránka (Šimon)</a></li>
+    				<li><a href="https://houskovci.neocities.org/" target="_blank">Stránka (Jakub)</a></li>
+    			</ul>
+    		</nav>
+	</header>
+    <table board="3">
+      <tr>
+        <td style="text-align: center;"><a href="lev.html" target="_blank"><img src="lion.jpg" alt="lion" height="100"></a><br>Panthera leo</td>
+        <td style="text-align: center;"><a href="slon.html" target="_blank"><img src="elephant.jpg" alt="elephant" height="100"></a><br>Loxodonta africana</td>
+        <td style="text-align: center;"><a href="tygr.html" target="_blank"><img src="tiger.jpg" alt="tiger" height="100"></a><br>Panthera tigris</td>
+      </tr>
+      <tr>
+        <td style="text-align: center;"><a href="medved.html" target="_blank"><img src="bear.jpg" alt="bear" height="100"></a><br>Ursidae</td>
+        <td style="text-align: center;"><a href="zirafa.html" target="_blank"><img src="giraffe.jpg" alt="giraffe" height="100"></a><br>Giraffa</td>
+        <td style="text-align: center;"><a href="panda.html" target="_blank"><img src="panda.jpg" alt="panda" height="100"></a><br>Ailuropoda melanoleuca</td>
+      </tr>
+      <tr>
+        <td style="text-align: center;"><a href="vlk.html" target="_blank"><img src="wolf.jpg" alt="wolf" height="100"></a><br>Canis lupus</td>
+        <td style="text-align: center;"><a href="klokan.html" target="_blank"><img src="kangaroo.jpg" alt="kangaroo" height="100"></a><br>Macropus</td>
+        <td style="text-align: center;"><a href="zebra.html" target="_blank"><img src="zebra.jpg" alt="zebra" height="100"></a><br>Equus quagga</td>
+      </tr>
+    </table>
+  </body>
+</html>
