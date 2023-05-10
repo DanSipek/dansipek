@@ -11,21 +11,7 @@
     if (sessionStorage.getItem("loggedIn") !== "true") {
       // Pokud je uživatel přihlášen, umožní mu přístup na stránku main.html
       window.location.href = "index.html";
-    } 
-    
-    function openGmail() {    
-      const name = document.getElementById('name').value;
-      const subject = document.getElementById('predmet').value;
-      const message = document.getElementById('message').value;
-      const to = 'daniel.sipek@zspolabiny1.cz, jakub.nemec@zspolabiny1.cz, simon.slavik@zspolabiny1.cz';
-    
-      const body = `${name},%0D%0A${message}`;
-      const gmailUrl = `https://mail.google.com/mail/?view=cm&to=${to}&su=${subject}&body=${body}`;
-    
-      window.open(gmailUrl, '_blank');
-      emailCounter++;
     }
-    
     window.addEventListener('scroll', function() {
       var body = document.getElementsByTagName('body')[0];
       if (window.scrollY > 0) {
